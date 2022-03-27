@@ -1,4 +1,4 @@
-baseURL = "https://1pedro.github.io"
+baseURL = "https://1pedro.github.io/blog"
 languageCode = "en-us"
 title = "Pedro"
 theme = "hugo-tania"

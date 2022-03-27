@@ -1,0 +1,8 @@
+baseURL = "https://1pedro.github.io"
+languageCode = "en-us"
+title = "Pedro"
+theme = "paper"
+
+[params]
+    github = '1pedro'
+    dark = 'yes'

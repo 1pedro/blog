@@ -11,11 +11,11 @@ timezone = "America/Bahia"
 siteDesc = "teste"
 pluralizeListTitles = false
 [params]
-    titleEmoji = '⌨️'
+    titleLogo = 'favicon.ico'
     enableFootnotes = true
 
     [params.socialOptions]
-    github = "1pedro"
+    github = "https://github.com/1pedro"
 
     [params.colorScheme]
         default = 'dark'

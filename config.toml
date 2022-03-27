@@ -8,7 +8,7 @@ enableEmoji = true
 enableRobotsTXT = true
 removePathAccents = true
 timezone = "America/Bahia"
-siteDesc = "teste"
+siteDesc = "Blogging and learning one post at time."
 pluralizeListTitles = false
 [params]
     titleLogo = 'favicon.ico'
@@ -24,7 +24,7 @@ pluralizeListTitles = false
     [[menu.header]]
         name = 'Til'
         identifier = 'Today I Learned'
-        url = '/today i learned'
+        url = 'https://1pedro.github.io/blog/today-i-learned'
         pre = '🧠 '
 
 

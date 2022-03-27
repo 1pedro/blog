@@ -20,12 +20,30 @@ pluralizeListTitles = false
     [params.colorScheme]
         default = 'dark'
 
+    
+    [params.comments]
+      enabled = true
+      provider = "giscus"
+
+      [params.comments.giscus]
+        repo = "1pedro/blog"
+        id = "R_kgDOHEyONQ"
+        
+        [params.comments.giscus.category]
+        id = "DIC_kwDOHEyONc4COS-e"
+        name = "Comments"
+        loading = "lazy"
+        lang = "en"
+
+
+
 [menu]
     [[menu.header]]
         name = 'Til'
         identifier = 'Today I Learned'
         url = 'https://1pedro.github.io/blog/today-i-learned'
         pre = '🧠 '
+
 
 
 [markup]

@@ -1,8 +1,39 @@
 baseURL = "https://1pedro.github.io"
 languageCode = "en-us"
 title = "Pedro"
-theme = "paper"
-
+theme = "hugo-tania"
+author = "1pedro"
+paginate = 2
+enableEmoji = true
+enableRobotsTXT = true
+removePathAccents = true
+timezone = "America/Bahia"
+siteDesc = "teste"
+pluralizeListTitles = false
 [params]
-    github = '1pedro'
-    dark = 'yes'
+    titleEmoji = '⌨️'
+    enableFootnotes = true
+
+    [params.socialOptions]
+    github = "1pedro"
+
+    [params.colorScheme]
+        default = 'dark'
+
+[menu]
+    [[menu.header]]
+        name = 'Til'
+        identifier = 'Today I Learned'
+        url = '/today i learned'
+        pre = '🧠 '
+
+
+[markup]
+[markup.highlight]
+  noClasses = false
+  lineNos = true
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

@@ -1,4 +1,150 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pedro</title><link>https://1pedro.github.io/blog/</link><description>Recent content on Pedro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 27 Mar 2022 02:02:06 -0300</lastBuildDate><atom:link href="https://1pedro.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: Git is not suitable for binary large files</title><link>https://1pedro.github.io/blog/today-i-learned/git_is_not_suitable_for_binary_large_files/</link><pubDate>Sun, 27 Mar 2022 02:02:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/git_is_not_suitable_for_binary_large_files/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pedro</title><link>https://1pedro.github.io/blog/</link><description>Recent content on Pedro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Mar 2022 00:20:06 -0300</lastBuildDate><atom:link href="https://1pedro.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: How to convert a integer (32 bit) to binary using bitwise and bit-shift</title><link>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</link><pubDate>Mon, 28 Mar 2022 00:20:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</guid><description>
+&lt;p>Today I was exercising some competitive programming problems using &lt;a href="https://codility.com">Codility&lt;/a>.
+The first problem named &amp;ldquo;Binary Gap&amp;rdquo; consists in a way to determine the longest zero occurrences in a binary string.
+The problem gives us a number and we should convert that number to a binary string then find the biggest
+consecutive zero occurrences in that binary string.&lt;/p>
+&lt;p>This problem is classified as easy and I didn&amp;rsquo;t take too much time to solve it. But trying
+to solve this problem lead me to a search about how was the &amp;ldquo;best&amp;rdquo; or &amp;ldquo;correct&amp;rdquo; way to convert
+an integer into a binary string in Javascript.&lt;/p>
+&lt;p>Searching through stack overflow the first answer was great! I just need to do &lt;code>Number(32).toString(2)&lt;/code>
+with 32 being the input number that the problem gives to me. And it&amp;rsquo;s done.
+With some logic, the problem was solved and I received 100% of Correctness.&lt;/p>
+&lt;p>After solving the problem a couple of questions came to my mind:&lt;/p>
+&lt;ol>
+&lt;li>&lt;em>Is there another way to convert that is more efficient or more performatic?&lt;/em>&lt;/li>
+&lt;li>&lt;em>What if I have to make this same conversion but in another programming language?&lt;/em>&lt;/li>
+&lt;/ol>
+&lt;p>Again these questions lead me to another search. But now, about how many ways I can convert a number to a binary string.&lt;/p>
+&lt;h5 id="divsion-by-2">
+&lt;a href="#divsion-by-2" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Divsion by 2
+&lt;/h5>
+&lt;p>The search gave to me two different ways. The first uses a loop that get the rest of the division by 2, store the value
+in a stack then get the values from the stack concatenating one by one.
+For learning purpose, I read the specification of the algorithm and make a version.
+This algorithm looks like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span> &lt;span class="nx">divBy2&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">number&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">binString&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">number&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">binString&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="nx">number&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="s1">&amp;#39;0&amp;#39;&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="s1">&amp;#39;1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">number&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">floor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">number&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">binString&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">split&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">reverse&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nx">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This is what I was looking in the first question, but again it&amp;rsquo;s a Javascript way. The methods &lt;code>Math.floor&lt;/code>,
+&lt;code>split&lt;/code>, &lt;code>reverse&lt;/code> and &lt;code>join&lt;/code> will make no sense if I try to put this code in another language.
+Even for a C-like language.&lt;/p>
+&lt;h5 id="bit-shift--bitwise-way">
+&lt;a href="#bit-shift--bitwise-way" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Bit-shift + Bitwise way
+&lt;/h5>
+&lt;p>The second search result was a bitwise + bit-shift operation. It consists in looping the number 32 times (for 32 bits)
+walking from the most significant bit to the least significant bit and writing to a string.
+Again I read the specification and made my own version. It looks like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">function&lt;/span> &lt;span class="nx">bitwiseIntToBinaryString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">binString&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kd">let&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">31&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">number&lt;/span> &lt;span class="o">&amp;gt;&amp;gt;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">binString&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="nx">result&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="s1">&amp;#39;1&amp;#39;&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="s1">&amp;#39;0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">binString&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>With this, I can run this code in almost any C-like language and is way more performatic.
+The biggest con with this approach is that the number should fit the loop. Converting a 64 bit integer
+with this approach will lead to bugs. Besides that this algorithm always returns a 32 bit string, which means
+that even a number like 100 will lead us to &lt;strong>00000000000000000000000001100100&lt;/strong> instead of &lt;strong>1100100&lt;/strong>.&lt;/p>
+&lt;p>With this in mind, I came up with a decision to remove the leading zeros of the string using a regex.&lt;br>
+In another time I will try to fix the number fit as well. But by now the function without leading zeros is like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-diff" data-lang="diff">&lt;span class="line">&lt;span class="cl">function bitwiseIntToBinaryString(number) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> let binString = &amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> for (let i = 31; i &amp;gt;= 0; i--) {
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> const result = number &amp;gt;&amp;gt; i;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> binString += result &amp;amp; 1 ? &amp;#39;1&amp;#39; : &amp;#39;0&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> }
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">--- return binString
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gd">&lt;/span>&lt;span class="gi">+++ return binString.replace(/^0+/, &amp;#39;&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="gi">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>With this minor change we have now locked to javascript again but is easy to replace only this line to deal
+with a regex in another programming language. No logic change is necessary.&lt;/p>
+&lt;h5 id="conclusion">
+&lt;a href="#conclusion" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+Conclusion
+&lt;/h5>
+&lt;p>A simple codility problem gave me the ability to learn and implement two algorithms that are much more
+performatic and reusable than the language way.&lt;/p></description></item><item><title>TIL: Git is not suitable for binary large files</title><link>https://1pedro.github.io/blog/today-i-learned/git_is_not_suitable_for_binary_large_files/</link><pubDate>Sun, 27 Mar 2022 02:02:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/git_is_not_suitable_for_binary_large_files/</guid><description>
 &lt;p>I’d never thought about that until faced this problem. For me, git was the best option to keep track of file differences, either a text file or a binary file.&lt;/p>
 &lt;h5 id="the-problem">
 &lt;a href="#the-problem" class="anchor">

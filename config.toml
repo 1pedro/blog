@@ -28,10 +28,11 @@ pluralizeListTitles = false
       [params.comments.giscus]
         repo = "1pedro/blog"
         id = "R_kgDOHEyONQ"
+        mapping = "pathname"
         
         [params.comments.giscus.category]
         id = "DIC_kwDOHEyONc4COS-e"
-        name = "Comments"
+        name = "Announcements"
         loading = "lazy"
         lang = "en"
 

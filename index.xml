@@ -1,4 +1,116 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pedro</title><link>https://1pedro.github.io/blog/</link><description>Recent content on Pedro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 28 Mar 2022 00:20:06 -0300</lastBuildDate><atom:link href="https://1pedro.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: How to convert a integer (32 bit) to binary using bitwise and bit-shift</title><link>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</link><pubDate>Mon, 28 Mar 2022 00:20:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pedro</title><link>https://1pedro.github.io/blog/</link><description>Recent content on Pedro</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 30 Mar 2022 00:02:06 -0300</lastBuildDate><atom:link href="https://1pedro.github.io/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>TIL: CSS Selector Specificity</title><link>https://1pedro.github.io/blog/today-i-learned/til_css_specificity/</link><pubDate>Wed, 30 Mar 2022 00:02:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/til_css_specificity/</guid><description>
+&lt;p>Today I&amp;rsquo;ve read a &lt;a href="https://blog.codeminer42.com/codetips2-how-specificity-works-in-css/">post&lt;/a> from the code miner blog talking about CSS specificity.
+CSS Selector Specificity It&amp;rsquo;s a way of avoiding the use of &lt;code>!import&lt;/code> directive and it&amp;rsquo;s quite simple:&lt;/p>
+&lt;p>Suppose that you have a CSS like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">div&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">white&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">#&lt;/span>&lt;span class="nn">box&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">red&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">box&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">background-color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">black&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>and this css code is applied to a HTML like this:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">div&lt;/span> &lt;span class="na">id&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;box&amp;#34;&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;.box&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h5 id="the-question-is-what-will-be-the-background-color-of-that-div">
+&lt;a href="#the-question-is-what-will-be-the-background-color-of-that-div" class="anchor">
+&lt;svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+&lt;path fill-rule="evenodd"
+d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+&lt;/path>
+&lt;/svg>
+&lt;/a>
+The question is: &amp;ldquo;What will be the background color of that div?
+&lt;/h5>
+&lt;p>The answer is the result of specificity calculation and it&amp;rsquo;s like this:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>!important&lt;/th>
+&lt;th style="text-align:center">style attributes&lt;/th>
+&lt;th>id&lt;/th>
+&lt;th style="text-align:left">Class, Attribute selector, pseudo-classes&lt;/th>
+&lt;th style="text-align:left">Tag, pseudo-elements&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>!import&lt;/td>
+&lt;td style="text-align:center">&lt;/td>
+&lt;td>#id&lt;/td>
+&lt;td style="text-align:left">.class,[type=&amp;ldquo;input&amp;rdquo;],:hover&lt;/td>
+&lt;td style="text-align:left">h1, ::before&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The table of points will be:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>selector&lt;/th>
+&lt;th>!important&lt;/th>
+&lt;th>style attributes&lt;/th>
+&lt;th>id&lt;/th>
+&lt;th>Class, Attribute selector, pseudo-classes&lt;/th>
+&lt;th>Type, pseudo-elements&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>div&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>#box&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>.box&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>0&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>0&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The biggest value we got is &lt;strong>#box&lt;/strong>, which is &lt;strong>00100&lt;/strong>. And the background color will be &lt;span style="color: red">red!&lt;/span>&lt;/p>
+&lt;p>More examples can be found on the original post: &lt;a href="https://blog.codeminer42.com/codetips2-how-specificity-works-in-css/">https://blog.codeminer42.com/codetips2-how-specificity-works-in-css/&lt;/a>&lt;/p></description></item><item><title>TIL: How to convert a integer (32 bit) to binary using bitwise and bit-shift</title><link>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</link><pubDate>Mon, 28 Mar 2022 00:20:06 -0300</pubDate><guid>https://1pedro.github.io/blog/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</guid><description>
 &lt;p>Today I was exercising some competitive programming problems using &lt;a href="https://codility.com">Codility&lt;/a>.
 The first problem named &amp;ldquo;Binary Gap&amp;rdquo; consists in a way to determine the longest zero occurrences in a binary string.
 The problem gives us a number and we should convert that number to a binary string then find the biggest

@@ -64,9 +64,10 @@ I feel a more complete programmer every time I understand what each new word mea
 
 - Why we don't have a simple `queue` constructor? why do we have to use `clojure.lang.PersistentQueue/EMPTY` to generate an empty queue?
 - Why the `every?` function has a `?` and the `some` does not have? why `some` does not returns a boolean too?
-- Why do `pop` and `peek` work in a way when dealing with lists and queues, and total differently when dealing with vectors? Is it not easy to implement another method just for the vectors?
+- Why do `pop` and `peek` work in a way when dealing with lists and queues, and totally differently when dealing with vectors? Is it not easy to implement another function just for the vectors?
 - Why I can use `pprint` in the `clj` but in the REPL of the IntelliJ I have to import it?
 
+I hope that with more days learning clojure I can answer this questions.
 
 ## Conclusion
 

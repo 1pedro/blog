@@ -10,6 +10,7 @@ removePathAccents = true
 timezone = "America/Bahia"
 siteDesc = "Blogging and learning one post at time."
 pluralizeListTitles = false
+
 [params]
     titleLogo = 'favicon.ico'
     enableFootnotes = true
@@ -42,8 +43,15 @@ pluralizeListTitles = false
     [[menu.header]]
         name = 'Til'
         identifier = 'Today I Learned'
-        url = 'https://1pedro.github.io/blog/today-i-learned'
+        url = 'today-i-learned'
         pre = '🧠 '
+        
+    [[menu.header]]
+        name = 'Clojure'
+        identifier = 'clojure'
+        url = 'clojure'
+        pre = '<img style="width:25px;height:25px;vertical-align: sub;" src="https://clojure.org/images/clojure-logo-120b.png"/>&nbsp;'
+
 
 
 

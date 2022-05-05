@@ -49,7 +49,8 @@ Clojure uses special characters with a bunch of different meanings. I really rec
 As I said has been 3 weeks and I keep seeing new "def" words. We start with the simple `def`, then the `defn`, and after two or three days of learning
 you'll see: `defmacro` `deftest` `defprotocol` `defrecord` `defonce` `defmethod` `deftype` `defstruct`... and the list always gets bigger.
 
-I think that by now I don't have the knowledge to understand what's going on with so much def. But the first impression is: it looks like Clojure has more data structure than any other programming language and each "def" means a different kind of structure.
+I think that by now I don't have the knowledge to understand what's going on with so much def. But the first impression is: 
+> It looks like Clojure has more data structure than any other programming language and each "def" means a different kind of structure.
 
 ## New Nomenclatures
 
@@ -67,7 +68,7 @@ I feel a more complete programmer every time I understand what each new word mea
 - Why do `pop` and `peek` work in a way when dealing with lists and queues, and totally differently when dealing with vectors? Is it not easy to implement another function just for the vectors?
 - Why I can use `pprint` in the `clj` but in the REPL of the IntelliJ I have to import it?
 
-I hope that with more days learning clojure I can answer this questions.
+I hope that with more days of learning, I can answer these questions.
 
 ## Conclusion
 

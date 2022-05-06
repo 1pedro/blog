@@ -3,6 +3,7 @@ title: "First impressions on Clojure"
 date: 2022-05-05T11:28:43-03:00
 draft: false
 author: "1pedro"
+tags: ["clojure"]
 ---
 
 

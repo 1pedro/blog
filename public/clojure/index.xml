@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clojure on 1pedro</title>
+    <link>https://blog.1pedro.dev/clojure/</link>
+    <description>Recent content in Clojure on 1pedro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 May 2022 11:28:43 -0300</lastBuildDate><atom:link href="https://blog.1pedro.dev/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First impressions on Clojure</title>
+      <link>https://blog.1pedro.dev/clojure/first_impressions/</link>
+      <pubDate>Thu, 05 May 2022 11:28:43 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/clojure/first_impressions/</guid>
+      <description>Has been 3 weeks that I&amp;rsquo;m learning Clojure. Here I will dedicate myself to putting posts about what I&amp;rsquo;m thinking of Clojure.
+Beforehand I wanna make clear that this series is by the vision of a person that has never worked with a functional language and has never heard about LISP or his dialects. Keep in mind that the languages that I feel comfortable with (not expert) are Javascript, PHP, and Python.</description>
+    </item>
+    
+  </channel>
+</rss>

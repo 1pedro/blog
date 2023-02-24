@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 1pedro</title>
+    <link>https://blog.1pedro.dev/tags/</link>
+    <description>Recent content in Tags on 1pedro</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 May 2022 11:28:43 -0300</lastBuildDate><atom:link href="https://blog.1pedro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure</title>
+      <link>https://blog.1pedro.dev/tags/clojure/</link>
+      <pubDate>Thu, 05 May 2022 11:28:43 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://blog.1pedro.dev/tags/css/</link>
+      <pubDate>Wed, 30 Mar 2022 00:02:06 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithms</title>
+      <link>https://blog.1pedro.dev/tags/algorithms/</link>
+      <pubDate>Mon, 28 Mar 2022 00:20:06 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://blog.1pedro.dev/tags/js/</link>
+      <pubDate>Mon, 28 Mar 2022 00:20:06 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://blog.1pedro.dev/tags/git/</link>
+      <pubDate>Sun, 27 Mar 2022 02:02:06 -0300</pubDate>
+      
+      <guid>https://blog.1pedro.dev/tags/git/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

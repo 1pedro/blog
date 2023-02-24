@@ -1,6 +1,6 @@
-baseURL = "https://1pedro.github.io/blog"
+baseURL = "https://blog.1pedro.dev"
 languageCode = "en-us"
-title = "Pedro"
+title = "1pedro"
 theme = "hugo-tania"
 author = "1pedro"
 paginate = 10

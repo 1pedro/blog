@@ -1,0 +1,15 @@
+# Setup
+## Setup Hugo
+
+```bash
+brew install hugo
+```
+
+## Hugo-Tania Theme
+
+```bash
+rm -rf themes/hugo-tania
+git rm --cached themes/hugo-tania
+
+git submodule add -f https://github.com/WingLim/hugo-tania themes/hugo-tania
+```

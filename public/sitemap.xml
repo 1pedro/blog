@@ -2,51 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.1pedro.dev/</loc>
-    <lastmod>2022-05-05T11:28:43-03:00</lastmod>
-    <priority>0</priority>
-  </url><url>
-    <loc>https://blog.1pedro.dev/tags/clojure/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2022-05-05T11:28:43-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/clojure/</loc>
+    <loc>http://localhost:1313/clojure/</loc>
     <lastmod>2022-05-05T11:28:43-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/clojure/first_impressions/</loc>
+    <loc>http://localhost:1313/tags/clojure/</loc>
     <lastmod>2022-05-05T11:28:43-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/tags/</loc>
+    <loc>http://localhost:1313/clojure/first_impressions/</loc>
     <lastmod>2022-05-05T11:28:43-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/tags/css/</loc>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2022-05-05T11:28:43-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/css/</loc>
     <lastmod>2022-03-30T00:02:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/today-i-learned/til_css_specificity/</loc>
+    <loc>http://localhost:1313/today-i-learned/til_css_specificity/</loc>
     <lastmod>2022-03-30T00:02:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/today-i-learned/</loc>
+    <loc>http://localhost:1313/today-i-learned/</loc>
     <lastmod>2022-03-30T00:02:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/tags/algorithms/</loc>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
     <lastmod>2022-03-28T00:20:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/tags/js/</loc>
+    <loc>http://localhost:1313/tags/js/</loc>
     <lastmod>2022-03-28T00:20:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</loc>
+    <loc>http://localhost:1313/today-i-learned/til_how_to_convert_int_to_binary_using_bitwise_and_bit_shift/</loc>
     <lastmod>2022-03-28T00:20:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/tags/git/</loc>
+    <loc>http://localhost:1313/tags/git/</loc>
     <lastmod>2022-03-27T02:02:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/today-i-learned/git_is_not_suitable_for_binary_large_files/</loc>
+    <loc>http://localhost:1313/today-i-learned/git_is_not_suitable_for_binary_large_files/</loc>
     <lastmod>2022-03-27T02:02:06-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
     <lastmod>2019-05-28T00:00:00-03:00</lastmod>
   </url><url>
-    <loc>https://blog.1pedro.dev/articles/</loc>
+    <loc>http://localhost:1313/articles/</loc>
   </url><url>
-    <loc>https://blog.1pedro.dev/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

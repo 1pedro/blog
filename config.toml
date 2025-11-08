@@ -1,15 +1,17 @@
-baseURL = "https://blog.1pedro.dev"
+baseURL = "https://1pedro.dev"
 languageCode = "en-us"
 title = "1pedro"
 theme = "hugo-tania"
 author = "1pedro"
-paginate = 10
 enableEmoji = true
 enableRobotsTXT = true
 removePathAccents = true
 timezone = "America/Bahia"
 siteDesc = "Blogging and learning one post at time."
 pluralizeListTitles = false
+
+[pagination]
+    pagerSize=10
 
 [params]
     titleLogo = 'favicon.ico'
@@ -40,6 +42,13 @@ pluralizeListTitles = false
 
 
 [menu]
+
+    [[menu.header]]
+        name = 'Resume'
+        identifier = 'cv'
+        pre = '🧾 '
+        url = '/cv.pdf'
+
     [[menu.header]]
         name = 'Til'
         identifier = 'Today I Learned'
@@ -51,7 +60,6 @@ pluralizeListTitles = false
         identifier = 'clojure'
         url = 'clojure'
         pre = '<img style="width:25px;height:25px;vertical-align: sub;" src="https://clojure.org/images/clojure-logo-120b.png"/>&nbsp;'
-
 
 
 
